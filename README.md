@@ -4,3 +4,4 @@
 Usefull Resources
 
 1. 3d data viz with react - https://medium.com/cortico/3d-data-visualization-with-react-and-three-js-7272fb6de432
+2. React three fiber - https://github.com/pmndrs/react-three-fiber
