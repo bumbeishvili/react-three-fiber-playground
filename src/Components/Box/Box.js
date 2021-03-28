@@ -1,15 +1,9 @@
 import React, { useRef, useState } from 'react';
-import ReactDOM from 'react-dom'
+import { useFrame } from 'react-three-fiber'
+export default { title: 'Basics' };
 
 
-import { Canvas, useFrame } from 'react-three-fiber'
-
-import { Button } from '@storybook/react/demo';
-
-export default { title: 'Start' };
-
-
-function Box(props) {
+export function Box(props) {
     // This reference will give us direct access to the mesh
     const mesh = useRef()
 
@@ -35,27 +29,4 @@ function Box(props) {
         </mesh>
     )
 }
-
-
-export const withSimpleCubes = ({ posX, label, ...args }) => {
-    return (
-        <div>
-            {label}
-            <Canvas
-            >
-                <ambientLight />
-                <pointLight position={[10, 10, 10]} />
-                <Box position={[-1.2, 0, 0]} />
-                <Box position={[posX, 0, 0]} />
-                <Box position={[1.2, 0, 0]} />
-            </Canvas>
-        </div>
-        )
-};
-
-
-withSimpleCubes.args = { posX: -2, label: 'Custom Label Name' };
-withSimpleCubes.argTypes = {
-    posX: { control: { type: 'range', min: -10, max: 10 } }
-};
 
